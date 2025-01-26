@@ -1,8 +1,9 @@
 'use client'
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 
-const LoanCalculator = ({ selectedCategory }) => {
+const LoanCalculator = ({ selectedCategory : any }) => {
   // Define loan categories and their properties
   const loanDetails = {
     "Wedding Loans": {
@@ -185,6 +186,11 @@ const LoanCalculator = ({ selectedCategory }) => {
       </div>
     </div>
   );
+};
+
+// Add prop types for the component
+LoanCalculator.propTypes = {
+  selectedCategory: PropTypes.string.isRequired, // Define selectedCategory as a required string
 };
 
 export default LoanCalculator;
